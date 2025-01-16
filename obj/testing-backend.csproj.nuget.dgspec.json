@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\!testing\\Hiring-Backend\\testing-backend\\testing-backend.csproj": {}
+    "D:\\!testing\\Hiring-Backend\\testing-backend.csproj": {}
   },
   "projects": {
-    "D:\\!testing\\Hiring-Backend\\testing-backend\\testing-backend.csproj": {
+    "D:\\!testing\\Hiring-Backend\\testing-backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\!testing\\Hiring-Backend\\testing-backend\\testing-backend.csproj",
+        "projectUniqueName": "D:\\!testing\\Hiring-Backend\\testing-backend.csproj",
         "projectName": "testing-backend",
-        "projectPath": "D:\\!testing\\Hiring-Backend\\testing-backend\\testing-backend.csproj",
+        "projectPath": "D:\\!testing\\Hiring-Backend\\testing-backend.csproj",
         "packagesPath": "C:\\Users\\Ares\\.nuget\\packages\\",
-        "outputPath": "D:\\!testing\\Hiring-Backend\\testing-backend\\obj\\",
+        "outputPath": "D:\\!testing\\Hiring-Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,6 +51,24 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.12, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             }
           },
           "imports": [
