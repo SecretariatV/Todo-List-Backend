@@ -18,7 +18,7 @@ namespace TodoBackend.Dtos
         public required string Title { get; set; }
         public required DateTime DueDate { get; set; }
         public List<TodoItemRequestDto>? TodoItems { get; set; }
-        public byte[] RowVersion { get; set; }
+        public byte[]? RowVersion { get; set; }
     }
 
     public class TodoItemRequestDto
