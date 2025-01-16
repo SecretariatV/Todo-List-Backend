@@ -18,6 +18,9 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Add Swagger
+builder.Services.AddSwaggerGen();
+
 // Configure DbContext with MySQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -39,6 +42,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+// Configure development-only middleware
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
+}
 
 app.UseCors();
 app.UseRouting();
