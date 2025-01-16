@@ -1,6 +1,8 @@
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using TodoBackend.Data;
+using TodoBackend.Middlewares;
+using TodoBackend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection")))
 );
 
+// Register Services
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ITodoService, todoService>();
+
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -36,6 +42,9 @@ var app = builder.Build();
 
 app.UseCors();
 app.UseRouting();
+
+// Custom Middlewares
+app.UseMiddleware<AuthMiddleware>();
 
 app.MapGet("/health", () => Results.Json(new { msg = "Hello Get Zell" }));
 app.MapControllers();

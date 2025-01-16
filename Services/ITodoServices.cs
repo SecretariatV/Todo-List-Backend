@@ -2,10 +2,8 @@ using TodoBackend.Data.Entities;
 
 namespace TodoBackend.Services
 {
-    // Interface defining operations for managing Todo-related services
     public interface ITodoService
     {
-        // Creates a new Todo list in the system and returns the created Todo entity
         Task<TodoEntity> CreateTodoList(TodoEntity list);
 
         // Retrieves a list of Todo entities for a specific user, filtering out deleted ones
